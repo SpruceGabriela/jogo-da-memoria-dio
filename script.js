@@ -2,6 +2,10 @@ const cards = document.querySelectorAll('.card');
 let hasFlippedCard = false;
 let firstCard, secondCard;
 let lockBoard = false;
+let score = 0;
+let gameOver = false;
+
+shuffle();
 
 //função para virar carta
 function flipCard() {
@@ -24,6 +28,8 @@ function flipCard() {
 function checkForMatch() {
     if(firstCard.dataset.card === secondCard.dataset.card) {
         disableCards();
+        score++;
+        isGameOver();
         return;
     }
 
@@ -57,12 +63,21 @@ function resetBoard() {
 }
 
 //função que embaralha as cartas
-(function shuffle() {
+function shuffle() {
     cards.forEach((card) => {
         let ramdomPosition = Math.floor(Math.random() * 12);
         card.style.order = ramdomPosition;
     })
-})();
+};
+
+//função que verifica se o jogo acabou
+function isGameOver() {
+    if(score === 6) {
+        confirm("Fim de jogo, quer continuar?");
+        document.location.reload(true);
+    }
+}
+
 
 //adiciona evento de clique na carta
 cards.forEach((card) => {
