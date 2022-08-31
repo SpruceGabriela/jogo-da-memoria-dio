@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     display: flex;
-    background-color: rgb(188, 248, 228);
+    background-color: #181818;
 }
 
 .memory-game {
@@ -16,43 +16,42 @@ body {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    perspective: 1000px; /* perspectiva do usuario no eixo z, quanto maior, maior o efeito da perspectiva */
+    perspective: 1000px;
 }
 
 .card {
-    height: calc( 33.333% - 10px);
+    height: calc(33.333% -10px);
     width: calc(25% - 10px);
     margin: 5px;
     position: relative;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    box-shadow: 1px 1px 1px rgb(1, 1, 1, .3);
     cursor: pointer;
     transform: scale(1);
-    transform-style: preserve-3d; /* adiciona perspectiva 3d, para que o elemento nao fique achatada no plano */
-    transition: transform .9s; /* adiciona efeito de movimento ao flip do card */
+    transform-style: preserve-3d; /*não deixa o elemento achatado no plano*/
+    transition: transform .9s;
 }
 
-.card:active{
+.card:active {
     transform: scale(0.97);
-    transition: transform .2s;
+    transition: transform .3s;
 }
 
-.card-front,
-.card-back {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  position: absolute;
-  border-radius: 5px;
-  background: rgb(92, 187, 182);
-  backface-visibility: hidden; /* todo elemento tem uma frente e um verso (ao contrario, como um espelho.) essa propriedade retira o verso */
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    background: white;
+    backface-visibility: hidden;
+
 }
 
 .card-front {
-    transform: rotateY(180deg); /* antes, o verso aparecia transparente, pois ambas as imagens tem position absolute, ao girar no eixo Y, elas ficaram com os versos virados */
+    transform: rotateY(180deg);
 }
 
-/* flip card animation */
+/*flip card animation*/
 
-.card.flip {
+.card.flip{
     transform: rotateY(180deg);
 }

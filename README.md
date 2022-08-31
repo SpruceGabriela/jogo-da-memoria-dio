@@ -1,13 +1,9 @@
-# Oi, tudo bem? Chegou aqui através do curso, certo? 🙃
+# Jogo da memória
 
-Esse é o repositório da nossa aula de Javascript, na qual vamos fazer um jogo da memória com a temática de Super Mario! 
+Exercício proposto pela Digital Innovation One como parte do curso Javascript Game Developer
 
-### Os requisitos são:
-
-* [HTML básico](https://www.w3schools.com/html/)
-* [CSS básico](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
-* [Javascript básico](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
- 
+Mudei somente a aparência das cartas. Ao invés de ser o tema do Mário, agora são os cards Pokemon
 
 
-## 🚀 Let's code! 🚀
+Link do repositório original: https://github.com/SpruceGabriela/jogo-da-memoria-dio
+
